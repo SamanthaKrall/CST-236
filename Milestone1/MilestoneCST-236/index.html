@@ -1,0 +1,84 @@
+<link rel="stylesheet" type="text/css" href="css.css">
+<html>
+<body>
+	<h1>Welcome to the Shirt Shack!</h1><br><br>
+	<section>
+		<nav>
+			<h4>Login or Register!</h4>
+			<hr>
+				<button onclick="login()">Login</button>
+				<button onclick="register()">Register</button>
+			<hr>
+			<div id="login" style="display: none">
+				<form method="POST">
+					<hr>
+					User Name:<br>
+					<input type="text" name="login_name" placeholder="User Name"><br>
+					Password:<br>
+					<input type="password" name="login_password" placeholder="Password"><br><br>
+					<input type="submit" formaction="login.php"	value="Submit" name="submit"><br>
+				</form>
+			</div>
+			<div id="register" style="display: none">
+				<form method="POST">
+					<div>
+						<hr>
+						User Name:<br>
+						<input type="text" placeholder="User Name" name="login_name" required><br>
+						Password:<br>
+						<input type="text" placeholder="Password" name="login_password" required><br>
+						First Name:<br>
+						<input type="text" placeholder="First Name" name="first_name" required><br>
+						Last Name:<br>
+						<input type="text" placeholder="Last Name" name="last_name" required><br>
+						Email:<br>
+						<input type="text" placeholder="Email" name="email" required><br>
+						Phone Number:<br>
+						<input type="text" placeholder="Phone Number" name="phone_number" required><br>
+						Address:<br>
+						<input type="text" placeholder="Address" name="address" required><br>
+						City:<br>
+						<input type="text" placeholder="City" name="city" required><br>
+						State:<br>
+						<input type="text" placeholder="State" name="state" required><br>
+						Zip Code:<br>
+						<input type="text" placeholder="Zip Code" name="zip_code" required><br>
+						Country:<br>
+						<input type="text" placeholder="Country" name="country" required><br><br><br>
+						<input type="submit" formaction="register.php" value="Submit"><br><br>
+					</div>
+				</form>
+			<?php
+				if (isset($_POST['submit'])) {
+					session_start();
+					$userName = $_POST['userName'];
+					$_SESSION['userName']=$userName;
+			?>
+			</div>
+		</nav>
+		<article>
+			<hr>
+			<p>	Your quick and easy source for quality shirts!</p>
+			<hr>
+		</article>
+	</section>
+	<script>
+		function login(){
+			var x = document.getElementById("login");
+			if (x.style.display === "none"){
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+		function register() {
+			var x = document.getElementById("register");
+			if (x.style.display === "none"){
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>

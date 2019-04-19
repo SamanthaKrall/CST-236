@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+	font-family: Comic Sans MS, cursive, sans-serif;
+	color: rebeccapurple;
+}
+body {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: plum;
+	border: 3px solid rebeccapurple;
+	margin-bottom: 25px;
+	color: rebeccapurple;
+	width: 50%;
+	padding: 15px;
+	display: inline-block;
+}
+button {
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: 1px solid rebeccapurple;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+header {
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+}
+nav {
+	float: left;
+	width: 30%;
+	padding: 20px;
+}
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+article {
+	float: left;
+	padding: 20px;
+	width: 70%;
+}
+section:after{ /*clear floats after the columns */
+	content: "";
+	display: table;
+	clear: both;
+}
+@media(max-width: 600px){ /*makes the boxes stack on top instead of next on small screens */
+	nav, article {
+		width: 100%;
+		height: auto;
+	}
+}
+</style>
+</head>
+</html>
